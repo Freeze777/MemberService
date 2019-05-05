@@ -13,7 +13,7 @@
         <property name="show_sql">true</property>
         <property name="format_sql">false</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
-        <mapping class="com.service.member.model.Member"/>
-        <mapping class="com.service.member.model.Image"/>
+        <mapping class="com.service.member.model.entity.Member"/>
+        <mapping class="com.service.member.model.entity.Image"/>
     </session-factory>
 </hibernate-configuration>

@@ -1,7 +1,8 @@
 package com.service.member.utils;
 
 import com.google.common.base.Strings;
-import com.service.member.model.Member;
+import com.service.member.model.entity.Image;
+import com.service.member.model.entity.Member;
 import lombok.NonNull;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -12,12 +13,13 @@ import java.sql.SQLException;
 
 public class MemberServiceUtils {
 
-    public static Blob getBlobFromMultipartFile(@NonNull final MultipartFile file) throws IOException, SQLException {
+    public static Image getImageFromMultipartFile(@NonNull final MultipartFile file) throws IOException, SQLException {
         byte[] bytes = file.getBytes();
-        return new SerialBlob(bytes);
+        Blob blob = new SerialBlob(bytes);
+        return Image.builder().blob(blob).build();
     }
 
-    public static void merge(Member existingMember, Member member) throws SQLException {
+    public static void merge(Member existingMember, Member member) {
 
         if (!Strings.isNullOrEmpty(member.getDateOfBirth())) {
             existingMember.setDateOfBirth(member.getDateOfBirth());

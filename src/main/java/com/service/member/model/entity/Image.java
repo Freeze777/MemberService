@@ -1,4 +1,4 @@
-package com.service.member.model;
+package com.service.member.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -28,5 +28,5 @@ public class Image implements Serializable {
 
     @JsonIgnore
     @Column(name = "IMAGE")
-    private Blob image;
+    private Blob blob;
 }
