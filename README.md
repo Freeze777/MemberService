@@ -1,2 +1,2 @@
 # MemberService
-A REST based webservice
+A Spring Boot RESTful webservice
